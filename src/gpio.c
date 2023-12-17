@@ -100,7 +100,7 @@ bool GpioGetState(gpio_t self) {
 }
 
 uint8_t GpioGetDirection(gpio_t self) {
-    return self->output;
+    return self->port;
 }
 
 /* === End of documentation ==================================================================== */

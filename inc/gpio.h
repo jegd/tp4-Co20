@@ -46,11 +46,28 @@ typedef struct gpio_h * gpio_t;
 /* === Public variable declarations ============================================================ */
 
 /* === Public function declarations ============================================================ */
-
+/**
+ * @brief   Función para crear el puerto GPIO
+ *
+ * @param port Dirección del puerto que se usará
+ * @param bit   Número del GPIO que se usará
+ * @return gpio_t Puntero al objeto del puerto creado
+ */
 gpio_t GpioCreate(uint8_t port, uint8_t bit);
-
+/**
+ * @brief   Función para colocar una dirección de puerto
+ *
+ * @param gpio Puntero al objeto obtenido al llamar a la función GpioCreate
+ * @param output Variable booleana para indicar si el puerto se usará como salida true o entrada
+ * false
+ */
 void GpioSetDirection(gpio_t gpio, bool output);
-
+/**
+ * @brief   Función para cambiar el estado del puerto
+ *
+ * @param gpio Puntero al objeto obtenido al llamar a la función GpioCreate
+ * @param state Estado al que se quiere cambiar el puerto
+ */
 void GpioSetState(gpio_t gpio, bool state);
 /**
  * @brief   Función para consultar el estado del puerto digital
@@ -60,7 +77,12 @@ void GpioSetState(gpio_t gpio, bool state);
  * @return gpio_t
  */
 bool GpioGetState(gpio_t gpio);
-
+/**
+ * @brief   Función consultar la dirección del puerto
+ *
+ * @param gpio Puntero al objeto obtenido al llamar a la función GpioCreate
+ * @return uint8_t Entrega el número de puerto
+ */
 uint8_t GpioGetDirection(gpio_t gpio);
 
 /* === End of documentation ==================================================================== */
